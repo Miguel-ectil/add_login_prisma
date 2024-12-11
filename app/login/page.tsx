@@ -4,7 +4,7 @@ import { useState } from "react";
 export default function Login() {
   const [formData, setFormData] = useState({ email: "", password: "" });
 
-  const handleSubmit = async (e) => {
+  const handleSubmit = async (e: { preventDefault: () => void; }) => {
     e.preventDefault();
     const res = await fetch("/api/auth/login", {
       method: "POST",
